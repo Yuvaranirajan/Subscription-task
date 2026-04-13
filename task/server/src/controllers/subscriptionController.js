@@ -1,5 +1,6 @@
 import Subscription from '../models/Subscription.js';
 import Plan from '../models/Plan.js';
+import User from '../models/User.js';
 import sendResponse from '../utils/responseWrapper.js';
 
 export const subscribe = async (req, res) => {
@@ -56,8 +57,6 @@ export const getAllSubscriptions = async (req, res) => {
     if (planId) query.planId = planId;
 
     if (search) {
-        const User = (await import('../models/User.js')).default;
-        const Plan = (await import('../models/Plan.js')).default;
 
         const matchedUsers = await User.find({
             $or: [

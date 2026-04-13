@@ -22,10 +22,7 @@ const seedAdmin = async () => {
         
         if (adminUser) {
             console.log(`Admin user already exists (${adminData.email}). Updating credentials...`);
-            adminUser.name = adminData.name;
-            adminUser.password = adminData.password; 
-            await adminUser.save();
-            console.log('Admin user updated successfully!');
+            
         } else {
             console.log(`Creating new admin user: ${adminData.email}`);
             adminUser = new User(adminData);

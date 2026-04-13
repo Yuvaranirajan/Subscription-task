@@ -58,7 +58,7 @@ const LoginPage = () => {
                   type="text"
                   {...register('email')}
                   className="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all outline-none bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white"
-                  placeholder="name@example.com"
+                  placeholder="Enter Your Email"
                 />
               </div>
               {errors.email && <p className="text-red-500 text-xs font-semibold ml-1">{errors.email.message}</p>}

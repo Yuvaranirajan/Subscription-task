@@ -80,12 +80,15 @@ export const loginUser = async (req, res) => {
             token,
         }, 'login');
     } else {
-        return sendResponse(res, 401, 'Invalid email or password', null, 'login');
+        return sendResponse(res, 400, 'Invalid email or password', null, 'login');
     }
 };
 
 export const getUser = async (req, res) => {
     const user = await User.findById(req.user._id).select('-password');
+    if (!user) {
+        return sendResponse(res, 404, 'User not found', null, 'getUserProfile');
+    }
     return sendResponse(res, 200, 'fetched successfully', user, 'getUserProfile');
 };
 
@@ -101,7 +104,7 @@ export const refreshTokenHandler = async (req, res) => {
         const user = await User.findById(decoded.id).select('-password');
         
         if (!user) {
-            return sendResponse(res, 401, 'User not found', null, 'refreshToken');
+            return sendResponse(res, 404, 'User not found', null, 'refreshToken');
         }
 
         const token = generateToken(user._id);

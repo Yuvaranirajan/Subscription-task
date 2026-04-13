@@ -41,7 +41,7 @@ const PlanCard = ({ plan, onSubscribe, isLoading }: PlanCardProps) => {
         disabled={isLoading}
         className="w-full bg-emerald-600 cursor-pointer text-white py-4 rounded-2xl font-bold hover:bg-emerald-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-emerald-200 dark:shadow-none hover:shadow-emerald-300 active:scale-[0.98]"
       >
-        {isLoading ? 'Processing...' : 'Select Plan'}
+        {isLoading ? 'Selected Plan' : 'Select Plan'}
       </button>
     </div>
   );

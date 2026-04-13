@@ -142,7 +142,7 @@ const DashboardPage = () => {
                   <p className="text-gray-500 dark:text-slate-400 mb-4">You don't have an active subscription.</p>
                   <button 
                     onClick={() => navigate('/plans')}
-                    className="bg-emerald-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-emerald-700 transition-all"
+                    className="bg-emerald-600 cursor-pointer text-white px-6 py-2 rounded-lg font-bold hover:bg-emerald-700 transition-all"
                   >
                     Browse Plans
                   </button>
