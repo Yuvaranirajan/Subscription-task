@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "node --watch src/index.js",
+    "build": "esbuild src/index.js --bundle --platform=node --format=esm --outfile=dist/index.js",
+    "seed": "node src/seeds/seedPlans.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.23.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}
